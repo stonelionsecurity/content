@@ -1,4 +1,7 @@
-from __future__ import print_function
+import sys
+
+sys.path.insert(0, '/Users/aazadaliyev/dev/demisto/content')
+
 import re
 import sys
 import json
@@ -658,6 +661,8 @@ def get_instances_ips_and_names(tests_settings):
         return [tests_settings.server]
     with open('./Tests/instance_ips.txt', 'r') as instance_file:
         instance_ips = instance_file.readlines()
+        print('$$$===./Tests/instance_ips.txt')
+        print(instance_ips)
         instance_ips = [line.strip('\n').split(":") for line in instance_ips]
         return instance_ips
 
@@ -817,6 +822,9 @@ def manage_tests(tests_settings):
     """
     tests_settings.serverNumericVersion = get_and_print_server_numeric_version(tests_settings)
     instances_ips = get_instances_ips_and_names(tests_settings)
+    print('$$$=====instances_ips======')
+    print(json.dumps(instances_ips, indent=4))
+
     is_nightly = tests_settings.nightly
     number_of_instances = len(instances_ips)
     prints_manager = ParallelPrintsManager(number_of_instances)
