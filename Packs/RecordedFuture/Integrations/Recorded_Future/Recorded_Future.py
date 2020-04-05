@@ -141,7 +141,7 @@ def domain_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this domain', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['domain']] = {
             'Name': domain,
@@ -239,7 +239,7 @@ def url_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this URL', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['url']] = {
             'Data': url,
@@ -337,7 +337,7 @@ def ip_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this IP', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['ip']] = {
             'Address': ip,
@@ -436,7 +436,7 @@ def file_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this hash', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         hash_type = determine_hash(file)
         ec = {}
         ec[outputPaths['file']] = {
@@ -503,7 +503,6 @@ def get_related_entities_command():
 
     ec = {}
     if response and ('error' not in response):
-        hr = []  # type: list
         entity_result_type = entity_result_type.split(',')
         entity_types = []  # type: list
         if 'All' in entity_result_type:
@@ -581,7 +580,7 @@ def get_related_entities_command():
             related_entities_ec['URL'] = url_outputs
 
         if hr_md:
-            hr_md = '### Recorded Future related entities to ' + entity_value + '\n' + hr
+            hr_md = '### Recorded Future related entities to ' + entity_value + '\n' + hr_md
             if entity_type == 'ip':
                 ec[outputPaths['ip']] = {
                     'Address': entity_value,
@@ -694,7 +693,7 @@ def hashlist_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this hash', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['file']] = {
             hash_type: file,
@@ -805,7 +804,7 @@ def iplist_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this IP', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['ip']] = {
             'Address': ip,
@@ -914,7 +913,7 @@ def domainlist_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this domain', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['domain']] = {
             'Name': domain,
@@ -1024,7 +1023,7 @@ def urllist_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this URL', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['url']] = {
             'Data': url,
@@ -1134,7 +1133,7 @@ def vulnlist_command():
             sightings_table.append(sighting)
         if sightings_table:
             hr += tableToMarkdown('References collected for this vulnerability', sightings_table,
-                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])
+                                  ['Title', 'Source', 'Type', 'URL', 'Fragment', 'Published'])  # disable-secrets-detection
         ec = {}
         ec[outputPaths['cve']] = {
             'ID': vuln,
