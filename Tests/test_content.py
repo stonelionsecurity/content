@@ -1,7 +1,4 @@
-import sys
-
-sys.path.insert(0, '/Users/aazadaliyev/dev/demisto/content')
-
+from __future__ import print_function
 import re
 import sys
 import json
