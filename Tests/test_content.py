@@ -654,6 +654,12 @@ def get_and_print_server_numeric_version(tests_settings):
 
 
 def get_instances_ips_and_names(tests_settings):
+    return [
+        "ec2-52-49-172-195.eu-west-1.compute.amazonaws.com",
+        "ec2-52-214-70-221.eu-west-1.compute.amazonaws.com",
+        "ec2-54-77-202-169.eu-west-1.compute.amazonaws.com",
+        "ec2-34-241-182-97.eu-west-1.compute.amazonaws.com"
+    ]
     if tests_settings.server:
         return [tests_settings.server]
     with open('./Tests/instance_ips.txt', 'r') as instance_file:

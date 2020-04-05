@@ -55,7 +55,64 @@ def determine_servers_urls(ami_env):
     """
 
     with open('./env_results.json', 'r') as json_file:
-        env_results = json.load(json_file)
+        env_results = [
+            {
+                "InstanceID": "i-05915e45c45cc7247",
+                "Key": "ireland-instanceservice",
+                "Name": "marketplace-1",
+                "OS": "Amazon-Linux",
+                "InstanceDNS": "ec2-52-49-172-195.eu-west-1.compute.amazonaws.com",
+                "Role": "Demisto PreGA",
+                "Region": "eu-west-1",
+                "SSHuser": "centos",
+                "KeyFileName": "id_rsa_02dfa56a539af55dbda6fcb2db9bc947",
+                "AmiName": "Demisto-Circle-CI-Content-PreGA-5.5-67981",
+                "AmiCreation": "2020-04-04T22",
+                "AmiId": "ami-0f0b93f27d8693a4e"
+            },
+            {
+                "InstanceID": "i-009d55a425779d4e3",
+                "Key": "ireland-instanceservice",
+                "Name": "marketplace-2",
+                "OS": "Amazon-Linux",
+                "InstanceDNS": "ec2-52-214-70-221.eu-west-1.compute.amazonaws.com",
+                "Role": "Demisto PreGA",
+                "Region": "eu-west-1",
+                "SSHuser": "centos",
+                "KeyFileName": "id_rsa_02dfa56a539af55dbda6fcb2db9bc947",
+                "AmiName": "Demisto-Circle-CI-Content-PreGA-5.5-67981",
+                "AmiCreation": "2020-04-04T22",
+                "AmiId": "ami-0f0b93f27d8693a4e"
+            },
+            {
+                "InstanceID": "i-0795e6bc560150465",
+                "Key": "ireland-instanceservice",
+                "Name": "marketplace-3",
+                "OS": "Amazon-Linux",
+                "InstanceDNS": "ec2-54-77-202-169.eu-west-1.compute.amazonaws.com",
+                "Role": "Demisto PreGA",
+                "Region": "eu-west-1",
+                "SSHuser": "centos",
+                "KeyFileName": "id_rsa_02dfa56a539af55dbda6fcb2db9bc947",
+                "AmiName": "Demisto-Circle-CI-Content-PreGA-5.5-67981",
+                "AmiCreation": "2020-04-04T22",
+                "AmiId": "ami-0f0b93f27d8693a4e"
+            },
+            {
+                "InstanceID": "i-0e80f093e4b7ac9fb",
+                "Key": "ireland-instanceservice",
+                "Name": "marketplace-4",
+                "OS": "Amazon-Linux",
+                "InstanceDNS": "ec2-34-241-182-97.eu-west-1.compute.amazonaws.com",
+                "Role": "Demisto PreGA",
+                "Region": "eu-west-1",
+                "SSHuser": "centos",
+                "KeyFileName": "id_rsa_02dfa56a539af55dbda6fcb2db9bc947",
+                "AmiName": "Demisto-Circle-CI-Content-PreGA-5.5-67981",
+                "AmiCreation": "2020-04-04T22",
+                "AmiId": "ami-0f0b93f27d8693a4e"
+            }
+        ]
         print('$$$======./env_results.json')
         print(env_results)
         env_to_instance_dns = [{env.get('Role'): env.get('InstanceDNS')} for env in env_results]
