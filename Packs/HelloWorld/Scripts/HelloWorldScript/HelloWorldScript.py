@@ -6,7 +6,7 @@ from CommonServerUserPython import *
 def say_hello(name):
     return f'Hello {name}'
 
-
+aa
 def say_hello_command(args):
     name = args.get('name')
 
