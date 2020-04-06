@@ -1,6 +1,6 @@
 id: Cortex XDR - Port Scan
 version: -1
-name: Cortex XDR - Port Scan
+name: Cortex XDR - Port ScanAAA
 description: |-
   Investigates a Cortex XDR incident containing internal port scan alerts. The playbook:
   - Syncs data with Cortex XDR
