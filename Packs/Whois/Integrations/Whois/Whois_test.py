@@ -5,6 +5,7 @@ import subprocess
 import time
 import tempfile
 import sys
+import os.path
 
 
 def assert_results_ok():
@@ -52,6 +53,8 @@ def test_socks_proxy(mocker, request):
     mocker.patch.object(demisto, 'command', return_value='test-module')
     mocker.patch.object(demisto, 'results')
     tmp = tempfile.TemporaryFile('w+')
+    if os.path.isfile('./test_data/microsocks'):
+        print("Yaakovi was right. It does exist.")
     microsocks = './test_data/microsocks_darwin' if 'darwin' in sys.platform else './test_data/microsocks'
     process = subprocess.Popen([microsocks, "-p", "9980"], stderr=subprocess.STDOUT, stdout=tmp)
 
