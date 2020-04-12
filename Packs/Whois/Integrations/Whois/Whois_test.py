@@ -5,7 +5,6 @@ import subprocess
 import time
 import tempfile
 import sys
-import os.path
 
 
 def assert_results_ok():
@@ -48,13 +47,15 @@ def test_socks_proxy_fail(mocker):
     assert "Couldn't connect with the socket-server" in results[0]['Contents']
 
 
+def test_always_fails():
+    assert 1 == 2
+
+
 def test_socks_proxy(mocker, request):
     mocker.patch.object(demisto, 'params', return_value={'proxy_url': 'socks5h://localhost:9980'})
     mocker.patch.object(demisto, 'command', return_value='test-module')
     mocker.patch.object(demisto, 'results')
     tmp = tempfile.TemporaryFile('w+')
-    if os.path.isfile('./test_data/microsocks'):
-        print("Yaakovi was right. It does exist.")
     microsocks = './test_data/microsocks_darwin' if 'darwin' in sys.platform else './test_data/microsocks'
     process = subprocess.Popen([microsocks, "-p", "9980"], stderr=subprocess.STDOUT, stdout=tmp)
 
