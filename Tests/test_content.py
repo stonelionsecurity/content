@@ -631,9 +631,10 @@ def run_test_scenario(tests_settings, t, proxy, default_test_timeout, skipped_te
     if (server_version_compare(test_from_version, server_numeric_version) > 0
             or server_version_compare(test_to_version, server_numeric_version) < 0):
         prints_manager.add_print_job('\n------ Test {} start ------'.format(test_message), print, thread_index)
-        warning_message = 'Test {} ignored due to version mismatch (test versions: {}-{})'.format(test_message,
-                                                                                              test_from_version,
-                                                                                                  test_to_version)
+        warning_message = 'Test {} ignored due to version mismatch (test versions: {}-{})'.format(
+            test_message,
+            test_from_version,
+            test_to_version)
         prints_manager.add_print_job(warning_message, print_warning, thread_index)
         prints_manager.add_print_job('------ Test {} end ------\n'.format(test_message), print, thread_index)
         return
@@ -838,6 +839,7 @@ def execute_testing(tests_settings, server_ip, mockable_tests_names, unmockable_
     #     with open(file_path, "w") as is_build_passed_file:
     #         is_build_passed_file.write('Build passed')
 
+
 def get_unmockable_tests(tests_settings):
     conf, secret_conf = load_conf_files(tests_settings.conf_path, tests_settings.secret_conf_path)
     unmockable_integrations = conf['unmockable_integrations']
@@ -858,6 +860,7 @@ def get_unmockable_tests(tests_settings):
 #     is_ami = options.isAMI
 #     server_version = options.serverVersion
 #     server_numeric_version = '0.0.0'
+
 
 def get_all_tests(tests_settings):
     conf, secret_conf = load_conf_files(tests_settings.conf_path, tests_settings.secret_conf_path)
