@@ -707,7 +707,57 @@ def create_test_file(is_nightly, skip_save=False):
             last_commit, second_last_commit = commit_string.split()
             files_string = run_command("git diff --name-status {}...{}".format(second_last_commit, last_commit))
 
-        tests = get_test_list(files_string, branch_name)
+        # tests = get_test_list(files_string, branch_name)
+        tests = [
+            'TestHelloWorld',
+            'Cherwell Example Scripts - test',
+            'Splunk-Test',
+            'Microsoft Graph Calendar - Test',
+            'cisco-ise-test-playbook',
+            'hashicorp_test',
+            'Microsoft Defender Advanced Threat Protection - Test',
+            'AWS-Lambda-Test (Read-Only)',
+            'minemeld_test',
+            'Test XDR Playbook',
+            'QRadar Indicator Hunting Test',
+            'Azure SecurityCenter - Test',
+            'Claroty - Test',
+            'CloudShark - Test Playbook',
+            'pyEWS_Test',
+            'Intezer Testing v2',
+            'CarbonBlackLiveResponseTest',
+            'SplunkPy-Test-V2',
+            'get_file_sample_by_hash_-_cylance_protect_-_test',
+            'test-Expanse-Playbook',
+            'Test-BPA',
+            'Azure Compute - Test',
+            'Calculate Severity - Standard - Test',
+            'CVE Search v2 - Test',
+            'Test - CrowdStrike Falcon',
+            'Detonate File - SNDBOX - Test',
+            'Symantec Messaging Gateway Test',
+            'Tanium Test Playbook',
+            'MISP V2 Test',
+            'Jira-v2-Test',
+            'Palo Alto Networks - Malware Remediation Test',
+            'SymantecEndpointProtection_Test',
+            'Cylance Protect v2 Test',
+            'ACM-Test',
+            'AWS_DynamoDB-Test',
+            'Test Playbook McAfee ATD',
+            'CuckooTest',
+            'test_Qradar',
+            'playbook-feodotrackeripblock_test',
+            'PhishlabsIOC_EIR-Test',
+            'SplunkPySearch_Test',
+            'rsa_packets_and_logs_test',
+            'Trend Micro Apex - Test',
+            'Endpoint Malware Investigation - Generic - Test',
+            'TestHelloWorldPlaybook',
+            'Cherwell - test',
+            'RSA NetWitness Test',
+            'EWS Public Folders Test'
+        ]
 
         tests_string = '\n'.join(tests)
         if tests_string:
