@@ -17,7 +17,7 @@ configuration:
   defaultvalue: https://example.awake.cloud
   type: 0
   required: true
-- display: Trust any certificate (unsecure)
+- display: Trust any certificate (not secure)
   name: unsecure
   defaultvalue: ""
   type: 8
