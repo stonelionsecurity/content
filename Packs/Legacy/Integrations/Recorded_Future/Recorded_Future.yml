@@ -61,7 +61,6 @@ configuration:
   required: false
 - display: Fetch incidents
   name: isFetch
-  defaultvalue: ""
   type: 8
   required: false
 - display: Rule names to fetch alerts by, separated by semicolon. If empty, all alerts
@@ -78,7 +77,6 @@ configuration:
   required: false
 - display: Incident type
   name: incidentType
-  defaultvalue: ""
   type: 13
   required: false
 script:
