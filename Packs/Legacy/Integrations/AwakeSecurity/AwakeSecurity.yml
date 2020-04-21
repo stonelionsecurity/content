@@ -369,17 +369,17 @@ script:
       description: Is the specified domain in white list
       type: boolean
     - contextPath: DBotScore.Indicator
-      description: The specified domain
-      type: string
-    - contextPath: DBotScore.Score
-      description: Severity score of the specified domain in Demisto
-      type: number
+      description: The indicator that was tested.
+      type: String
     - contextPath: DBotScore.Type
-      description: Indicator type in Demisto
-      type: string
+      description: The indicator type.
+      type: String
     - contextPath: DBotScore.Vendor
-      description: Vendor used to assess the specified domain
-      type: string
+      description: The vendor used to calculate the score.
+      type: String
+    - contextPath: DBotScore.Score
+      description: The actual score.
+      type: Number
     description: Lookup and enrich a domain
   - name: ip
     arguments:
@@ -410,17 +410,17 @@ script:
       description: Date that the IP address was last seen in Awake Security
       type: string
     - contextPath: DBotScore.Indicator
-      description: The specified IP address
-      type: string
-    - contextPath: DBotScore.Score
-      description: Severity score of the specified IP address in Demisto
-      type: number
-    - contextPath: DBotScore.Vendor
-      description: Vendor used to assess the specified IP address
-      type: string
+      description: The indicator that was tested.
+      type: String
     - contextPath: DBotScore.Type
-      description: Indicator type in Demisto
-      type: string
+      description: The indicator type.
+      type: String
+    - contextPath: DBotScore.Vendor
+      description: The vendor used to calculate the score.
+      type: String
+    - contextPath: DBotScore.Score
+      description: The actual score.
+      type: Number
     description: Lookup and enrich an IP address
   - name: email
     arguments:
@@ -484,18 +484,18 @@ script:
       description: Is the device associated with the specified email address in the
         white list
       type: bool
-    - contextPath: DBotScore.Score
-      description: Severity score of the specified email address in Demisto
-      type: number
-    - contextPath: DBotScore.Type
-      description: Indicator type in Demisto
-      type: string
-    - contextPath: DBotScore.Vendor
-      description: Vendor used to assess the specified email address
-      type: string
     - contextPath: DBotScore.Indicator
-      description: The specified email address
-      type: string
+      description: The indicator that was tested.
+      type: String
+    - contextPath: DBotScore.Type
+      description: The indicator type.
+      type: String
+    - contextPath: DBotScore.Vendor
+      description: The vendor used to calculate the score.
+      type: String
+    - contextPath: DBotScore.Score
+      description: The actual score.
+      type: Number
     description: Lookup and enrich an email address
   - name: device
     arguments:
